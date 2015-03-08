@@ -1,31 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="initial-scale=1.0">
-
   <title>Drunken Pirate Portfolio</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/modernizr.js"></script>
+ <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css">-->
+<script src="js/angular.js"></script>
 </head>
-<body>
+<body ng-init="picdatas=[{name: 'vessel1309', title: 'Call of Booty', date: '7 Nov 2013', description: 'Arrrgh mateys! This be the finest vessel sailing these seas that yer eyes ever laid sight on. Arrrgh.', imageurl: 'images/drunkenPirate_thumb3.png', alt: 'Pirate Ship'},
+    {name: 'innocents1404', title: 'The Sack of the Innocents', date: '7 Nov 2012', description: 'This be a detail of the sacking of the innocents where I played an important role as business analyst and in implementation.', imageurl: 'images/drunkenPirate_thumb2.png', alt: 'Sack of the Innocents'},
+    {name: 'firstmate1210', title: 'Pipe and First Mate', date: '7 Nov 2014', description: 'After a hard day of lootin\' and shootin\' I like to relax with my best mates and tally up the days booty.', imageurl: 'images/drunkenPirate_thumb1.png', alt: 'Pipe and First Mate'}]"
+    >
+
   <main class="wrap group">
     <aside class="sidebar">
      <div class="my-info">
        <img src="images/drunkenPirate_avatar.png" alt="drunken pirate" class="portfolio-image">
        <h1>Cap'n Seymour Butts</h1>
        <h2>Experienced pirate and leader of the salty seamen operating in the Carribean and South Seas.</h2>
-       <div class="social group">
-        <a href="#" class="dribbble">Dribbble</a>
-        <a href="#" class="poopy">Poopy</a>
-        <a href="#" class="facebook">Facebook</a>
-        <a href="#" class="github">Github</a>
+       <div class="social group"> 
+        <!--<a href="#"><span aria-hidden="true" data-icon="&#xE000;"></span></a>
+        <a href="#"><span aria-hidden="true" data-icon="&#xE001;"></span></a>
+        <a href="#"><span aria-hidden="true" data-icon="&#xE002;"></span></a>-->
+        <a href="#"><span aria-hidden="true" data-icon="&#xE003;"></span><span class="socialType">Github</span></a>
       </div>
     </div>
 
-    <div class="searchbar">
-      <input/>
-    </div>
+    <!--<div class="searchbar">
+      <input ng-model="searchFor">
+    </div>-->
 
     <nav class="menus">
      <h3 class="work">Work</h3>
@@ -55,44 +60,17 @@
 
 <div class="content">
 
-  <article class="portfolio-item group first">
+  <article class="portfolio-item group" ng-repeat="picdata in picdatas  | filter:searchFor">
     <header class="portfolio-info">
-      <div class="title">Call of Booty</div>
-      <div class="date">7 Nov 2013</div>
-      <div class="description">
-        Arrrgh mateys! This be the finest vessel sailing these seas that yer eyes ever laid sight on. Arrrgh.
-      </div>
+      <div class="title">{{picdata.title}}</div>
+      <div class="date">{{picdata.date}}</div>
+      <div class="description">{{picdata.description}}</div>
     </header>
     <figure class="portfolio-image">
-      <img src="images/drunkenPirate_thumb3.png" alt="Pirate Ship">
+      <img src="{{picdata.imageurl}}" alt="{{picdata.alt}}">
     </figure>
   </article>
 
-  <article class="portfolio-item group">
-    <header class="portfolio-info">
-      <div class="title">The Sack of the Innocents</div>
-      <div class="date">7 Nov 2013</div>
-      <div class="description">
-        This be a detail of the sacking of the innocents where I played an important role as business analyst and in implementation.
-      </div>
-    </header>
-    <figure class="portfolio-image">
-      <img src="images/drunkenPirate_thumb2.png" alt="Sack of the Innocents">
-    </figure>
-  </article>
-
-  <article class="portfolio-item group">
-    <header class="portfolio-info">
-      <div class="title">Pipe and First Mate</div>
-      <div class="date">7 Nov 2013</div>
-      <div class="description">
-        After a hard day of lootin' and shootin' I like to relax with my best mates and tally up the days booty.
-      </div>
-    </header>
-    <figure class="portfolio-image">
-      <img src="images/drunkenPirate_thumb1.png" alt="Pipe and Mate">
-    </figure>
-  </article>
 
   <article class="portfolio-item group loading-wrap" style="display:none">
     <header class="portfolio-info">
@@ -108,5 +86,16 @@
 </main>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="js/app.js"></script>
+
+
+<script>
+//$(document).ready.(function() {
+//$('article:first').addClass('first');
+//});
+
+//$('.socialType').hover(function() {
+ // $(this).css('display','block');
+//});
+</script>
 </body>
 </html>
