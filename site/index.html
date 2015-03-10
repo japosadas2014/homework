@@ -21,11 +21,17 @@
        <h1>Cap'n Seymour Butts</h1>
        <h2>Experienced pirate and leader of the salty seamen operating in the Carribean and South Seas.</h2>
        <div class="social group"> 
-        <!--<a href="#"><span aria-hidden="true" data-icon="&#xE000;"></span></a>
+        <a href="#"><span aria-hidden="true" data-icon="&#xE000;"></span></a>
         <a href="#"><span aria-hidden="true" data-icon="&#xE001;"></span></a>
-        <a href="#"><span aria-hidden="true" data-icon="&#xE002;"></span></a>-->
-        <a href="http://gibthub.com" target="_blank"><span aria-hidden="true" data-icon="&#xE003;"></span><span class="socialType">Github</span></a>
+        <a href="#"><span aria-hidden="true" data-icon="&#xE002;"></span></a>
+        <a href="#"><span aria-hidden="true" data-icon="&#xE003;"></span></a>
       </div>
+
+        <div class="socialType">Dribble</div>
+        <div class="socialType">Poppy</div>
+        <div class="socialType">Facebook</div>
+        <div class="socialType">Github</div>
+
     </div>
 
     <!--<div class="searchbar">
@@ -93,9 +99,9 @@ $(document).ready(function() {
 $('article:first').addClass('first');
 
 
-//$('span.socialType').onclick(function() {
- //$(this).css({display: "block"});
-//});
+$('div.socialType').onclick(function() {
+ $(this).css({display: "block"});
+});
 
 });
 </script>
