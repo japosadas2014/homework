@@ -19,7 +19,7 @@ function updateHeight() {
     visibleHeight = $(document).height() - $(window).height();
 }
 
-storeElements();
+//storeElements();
  
 $(window).on('resize', function(e) {
     updateHeight();
